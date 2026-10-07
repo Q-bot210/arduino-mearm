@@ -16,7 +16,7 @@ void setup() {
   servo_9.attach(9);
 
   servo_6.write(180);//夹爪
-  servo_7.write(80);//右臂
+  servo_7.write(90);//右臂
   servo_8.write(100);//底座
   servo_9.write(90);//左臂
 
@@ -84,7 +84,7 @@ void loop() {
   }
 
   if (analogRead(A1) < 400) {
-    if (servo_7.read() > 30) {
+    if (servo_7.read() > 60) {
       servo_7.write((servo_7.read() - 1));
     }
   }
