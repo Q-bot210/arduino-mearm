@@ -6,7 +6,7 @@ Servo servo_7;
 Servo servo_8;
 Servo servo_9;
 
-int speedDelay = 15;
+int speedDelay = 10;
 
 void setup() {
   // put your setup code here, to run once:
@@ -17,7 +17,7 @@ void setup() {
 
   servo_6.write(180);//夹爪
   servo_7.write(90);//右臂
-  servo_8.write(100);//底座
+  servo_8.write(90);//底座
   servo_9.write(90);//左臂
 
   Serial.begin(9600);
@@ -55,7 +55,7 @@ void loop() {
     line.trim();
 
     if (line == "O") {
-      servo_6.write(60);
+      servo_6.write(90);
     } 
     else if (line == "S") {
       servo_6.write(180);
@@ -73,7 +73,7 @@ void loop() {
 
   //摇杆控制
   if (analogRead(A0) < 400) {
-    if (servo_6.read() > 0) {
+    if (servo_6.read() > 90) {
       servo_6.write((servo_6.read() - 1));
     }
   }
@@ -84,24 +84,24 @@ void loop() {
   }
 
   if (analogRead(A1) < 400) {
-    if (servo_7.read() > 60) {
-      servo_7.write((servo_7.read() - 1));
-    }
-  }
-  else if (analogRead(A1) > 600) {
     if (servo_7.read() < 180) {
       servo_7.write((servo_7.read() + 1));
     }
   }
+  else if (analogRead(A1) > 600) {
+    if (servo_7.read() > 60) {
+      servo_7.write((servo_7.read() - 1));
+    }
+  }
 
   if (analogRead(A2) < 400) {
-    if (servo_8.read() > 0) {
-      servo_8.write((servo_8.read() - 1));
+    if (servo_8.read() < 175) {
+      servo_8.write((servo_8.read() + 1));
     }
   }
   else if (analogRead(A2) > 600) {
-    if (servo_8.read() < 180) {
-      servo_8.write((servo_8.read() + 1));
+    if (servo_8.read() > 5) {
+      servo_8.write((servo_8.read() - 1));
     }
   }
 
