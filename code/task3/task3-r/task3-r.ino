@@ -27,13 +27,15 @@ void loop() {
 
     if (cmd == 'J') {
       Serial.println("1-循环");
-      servo_8.write(60);
+      //待补充
     }
     else if (cmd == 'L') {
       Serial.println("2-录制");
+      //待补充
     }
     else if (cmd == 'B') {
       Serial.println("3-播放");
+      //待补充
     }
     else if (cmd == 'H') {
       Serial.println("4-回中");
