@@ -16,9 +16,9 @@ void setup() {
   servo_9.attach(9);
 
   servo_6.write(180);//夹爪
-  servo_7.write(90);//右臂
-  servo_8.write(90);//底座
-  servo_9.write(90);//左臂
+  servo_7.write(100);//上臂
+  servo_8.write(100);//底座
+  servo_9.write(100);//前臂
 
   Serial.begin(9600);
 }

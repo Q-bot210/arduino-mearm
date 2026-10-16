@@ -17,5 +17,5 @@ void loop() {
   if (digitalRead(3) == LOW) { armSerial.write('2'); delay(300); }
   if (digitalRead(4) == LOW) { armSerial.write('3'); delay(300); }
   if (digitalRead(5) == LOW) { armSerial.write('4'); delay(300); }
-  if (digitalRead(5) == LOW) { armSerial.write('5'); delay(300); }
+  if (digitalRead(6) == LOW) { armSerial.write('5'); delay(300); }
 }
